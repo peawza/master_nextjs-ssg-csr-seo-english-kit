@@ -1,0 +1,22 @@
+name: Agent Log Gate
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  agent-log-gate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository with history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Configure Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate log and state for source changes
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: node scripts/check-agent-log.mjs
