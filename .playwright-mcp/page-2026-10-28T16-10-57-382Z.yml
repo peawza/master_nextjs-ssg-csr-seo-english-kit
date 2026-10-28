@@ -1,0 +1,149 @@
+- generic [active] [ref=f13e1]:
+  - link "Skip to main content" [ref=f13e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f13e3]:
+    - button "Discover" [ref=f13e4] [cursor=pointer]:
+      - generic [aria-hidden] [ref=f13e5]: ☰
+    - link "Villa Luma, home" [ref=f13e7] [cursor=pointer]:
+      - /url: /
+      - generic [aria-hidden] [ref=f13e8]: ✳
+      - generic [ref=f13e9]: Villa Luma
+      - generic [ref=f13e10]: A lakeside reverie
+    - link "Explore stays" [ref=f13e11] [cursor=pointer]:
+      - /url: /#suites
+      - text: Explore stays ↗
+  - main [ref=f13e12]:
+    - region [ref=f13e13]:
+      - img "Still alpine water beneath mountains, with a small village along the shore" [ref=f13e15]
+      - generic [ref=f13e16]:
+        - paragraph [ref=f13e17]: Villa Luma · An imagined escape
+        - heading [level=1] [ref=f13e18]:
+          - text: Stay a little.
+          - emphasis [ref=f13e19]: Dream a little.
+        - paragraph [ref=f13e20]: A slower kind of beautiful.
+      - link "Discover the villa" [ref=f13e21] [cursor=pointer]:
+        - /url: "#about"
+        - text: ↓
+    - generic [ref=f13e22]:
+      - paragraph [ref=f13e23]: The art of simply being
+      - heading [level=2] [ref=f13e24]:
+        - text: Some places ask you to do more.This one invites you to
+        - emphasis [ref=f13e25]: just be.
+      - paragraph [ref=f13e26]: Imagine a house by the water. Shutters open to the morning, a garden that takes the long way home, a table with room for one more. Welcome to Villa Luma, a daydream of lakeside living.
+      - generic [aria-hidden] [ref=f13e27]: ❧
+    - generic [ref=f13e28]:
+      - generic [ref=f13e29]:
+        - img "Still alpine water beneath mountains, with a small village along the shore" [ref=f13e31]
+        - generic [ref=f13e32]:
+          - paragraph [ref=f13e33]: 01 / Through the seasons
+          - heading [level=2] [ref=f13e34]:
+            - text: A different light.
+            - emphasis [ref=f13e35]: The same magic.
+          - paragraph [ref=f13e36]: Spring arrives in a thousand shades of green. Summer lingers over the water. Autumn brings gold to the hills, and winter makes room for quiet. There is no perfect season for a daydream. There is only yours.
+          - link "Follow the seasons" [ref=f13e37] [cursor=pointer]:
+            - /url: "#seasonal-notes"
+            - text: Follow the seasons ↗
+      - generic [ref=f13e38]:
+        - article [ref=f13e39]:
+          - img "An intimate dining room with carefully set tables and warm lighting" [ref=f13e41]
+          - paragraph [ref=f13e42]: At the table
+          - heading "A taste of the unhurried" [level=3] [ref=f13e43]
+          - paragraph [ref=f13e44]: Fresh bread, the scent of herbs, something delicious passed from hand to hand. Our imagined table celebrates the pleasure of taking your time.
+        - article [ref=f13e45]:
+          - img "Sunlight falling through a quiet green forest canopy" [ref=f13e47]
+          - paragraph [ref=f13e48]: Out in the green
+          - heading "Let the afternoon find you" [level=3] [ref=f13e49]
+          - paragraph [ref=f13e50]: Follow a winding path beneath the trees. Find a patch of sunlight. Let the best part of the day be the part you never planned.
+    - generic [ref=f13e51]:
+      - generic [ref=f13e52]:
+        - paragraph [ref=f13e53]: 02 / A place to stay
+        - heading [level=2] [ref=f13e54]:
+          - text: Find your own
+          - emphasis [ref=f13e55]: little world.
+        - paragraph [ref=f13e56]: Three imagined ways to settle in.One beautiful reason to stay a while.
+      - generic [ref=f13e57]:
+        - article [ref=f13e58]:
+          - img "Sunlight falling through a quiet green forest canopy" [ref=f13e60]
+          - generic [ref=f13e61]:
+            - heading "The Garden House" [level=3] [ref=f13e62]
+            - generic [ref=f13e63]: "01"
+          - paragraph [ref=f13e64]: A green and peaceful retreat
+          - paragraph [ref=f13e65]: An imagined hideaway for slow mornings, open windows and a book left unfinished.
+        - article [ref=f13e66]:
+          - img "A softly lit bedroom with layered linens and a generous upholstered bed" [ref=f13e68]
+          - generic [ref=f13e69]:
+            - heading "The Villa Rooms" [level=3] [ref=f13e70]
+            - generic [ref=f13e71]: "02"
+          - paragraph [ref=f13e72]: Room for a little daydreaming
+          - paragraph [ref=f13e73]: Soft textures, generous light and the simple pleasure of having nowhere to rush.
+        - article [ref=f13e74]:
+          - img "Sunlit resort architecture surrounding a blue outdoor pool" [ref=f13e76]
+          - generic [ref=f13e77]:
+            - heading "The Pool Pavilion" [level=3] [ref=f13e78]
+            - generic [ref=f13e79]: "03"
+          - paragraph [ref=f13e80]: Life at the water’s edge
+          - paragraph [ref=f13e81]: A sun-drenched setting imagined around afternoon swims and long conversations.
+    - generic [ref=f13e82]:
+      - img "Still alpine water beneath mountains, with a small village along the shore" [ref=f13e84]
+      - generic [ref=f13e85]:
+        - paragraph [ref=f13e86]: 03 / Little stories
+        - heading [level=2] [ref=f13e87]:
+          - text: The lake keeps
+          - emphasis [ref=f13e88]: its own time.
+        - paragraph [ref=f13e89]: A boat slips out of view. Light moves across the hillside. In this imagined moment, nothing needs to happen for everything to feel different.
+        - link "A page from our journal ↗" [ref=f13e90] [cursor=pointer]:
+          - /url: "#journal"
+    - generic [ref=f13e92]:
+      - generic [ref=f13e93]:
+        - paragraph [ref=f13e94]: 04 / The journal
+        - heading [level=2] [ref=f13e95]:
+          - text: Collected moments.
+          - emphasis [ref=f13e96]: Kept close.
+        - paragraph [ref=f13e97]: A room filled with afternoon light. A conversation that wanders past midnight. The first cool swim of the summer. This is a journal of small things, and the space they leave in our lives.
+        - paragraph [ref=f13e98]: Turn the imaginary page. Leave a little room for a memory of your own.
+      - generic [ref=f13e99]:
+        - img "Sunlit resort architecture surrounding a blue outdoor pool" [ref=f13e101]
+        - generic [ref=f13e102]: Notes on a slower life — Volume 01
+    - generic [ref=f13e103]:
+      - generic [ref=f13e104]:
+        - paragraph [ref=f13e105]: 05 / Beyond the garden
+        - heading [level=2] [ref=f13e106]:
+          - text: A world of
+          - emphasis [ref=f13e107]: quiet discoveries.
+      - article [ref=f13e108]:
+        - img "Sunlight falling through a quiet green forest canopy" [ref=f13e110]
+        - generic [ref=f13e111]:
+          - paragraph [ref=f13e112]: An imagined woodland retreat
+          - heading "The Green House" [level=3] [ref=f13e113]
+          - paragraph [ref=f13e114]: "A companion to our lakeside daydream: a house tucked beneath the trees, where the only appointment is with the afternoon sun."
+      - article [ref=f13e115]:
+        - img "An intimate dining room with carefully set tables and warm lighting" [ref=f13e117]
+        - generic [ref=f13e118]:
+          - paragraph [ref=f13e119]: An imagined gathering place
+          - heading "Casa della Luce" [level=3] [ref=f13e120]
+          - paragraph [ref=f13e121]: A place for shared tables and bright ideas. A fictional collection of spaces made for art, good food and the pleasure of being together.
+  - contentinfo [ref=f13e122]:
+    - text: ✳
+    - heading [level=2] [ref=f13e123]:
+      - text: A little more time.
+      - emphasis [ref=f13e124]: A little more wonder.
+    - navigation "Footer navigation" [ref=f13e125]:
+      - link "The villa" [ref=f13e126] [cursor=pointer]:
+        - /url: /#about
+      - link "Through the seasons" [ref=f13e127] [cursor=pointer]:
+        - /url: /#seasons
+      - link "A place to stay" [ref=f13e128] [cursor=pointer]:
+        - /url: /#suites
+      - link "Little stories" [ref=f13e129] [cursor=pointer]:
+        - /url: /#stories
+      - link "The journal" [ref=f13e130] [cursor=pointer]:
+        - /url: /#journal
+      - link "Beyond the garden" [ref=f13e131] [cursor=pointer]:
+        - /url: /#places
+    - generic [ref=f13e132]:
+      - link "Villa Luma" [ref=f13e133] [cursor=pointer]:
+        - /url: /
+      - paragraph [ref=f13e134]: Independent design study · Fictional destinationNo reservations or services are offered. Photographs are illustrative.
+      - link "Back to the beginning ↑" [ref=f13e135] [cursor=pointer]:
+        - /url: /#main-content
+  - alert [ref=f13e136]

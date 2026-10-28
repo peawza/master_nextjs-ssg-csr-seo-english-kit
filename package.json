@@ -8,7 +8,10 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "verify:html": "node scripts/verify-static-html.mjs",
-    "verify:agent-log": "node scripts/check-agent-log.mjs"
+    "verify:agent-log": "node scripts/check-agent-log.mjs",
+    "preview": "node scripts/serve-static.mjs",
+    "test:browser": "playwright test",
+    "audit:lighthouse": "node scripts/audit-lighthouse.mjs"
   },
   "dependencies": {
     "next": "^16.0.0",
@@ -16,11 +19,14 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.1",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "eslint": "^9.0.0",
     "eslint-config-next": "^16.0.0",
+    "lighthouse": "^13.6.0",
+    "sharp": "^0.35.5",
     "typescript": "^5.9.0"
   }
 }

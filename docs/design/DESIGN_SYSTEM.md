@@ -1,27 +1,21 @@
-# Design System — Markdown Source of Design Intent
+﻿# Design System — Villa Luma / REV-001
 
-Update this file **and** `src/styles/tokens.css` whenever design tokens change.
+Fictional English-language lakeside hospitality design study. Original content and licensed replacement images, informed by Passalacqua's editorial proportions. No brand/logo/text reuse. Specifications: docs/reverse-engineering/passalacqua/DESIGN_BREAKDOWN.md.
 
-## Brand style
-- Visual direction: modern, minimal, typography-led, high contrast, spacious.
-- Sample interface language: English (`lang="en"`) because the starter copy is English. Change both content and `src/config/site.ts` to `th` / `th_TH` if publishing in Thai.
-- Do not overuse animation; enhance perceived quality without increasing time to meaningful content.
+| Token | Value / purpose |
+|---|---|
+| --color-bg | #f7f5ee cream |
+| --color-surface | #eeefe4 soft green cream |
+| --color-text | #283c35 dark green |
+| --color-muted | #536359 body copy |
+| --color-accent | #526747 olive links/focus |
+| --color-accent-text / --color-white | #ffffff |
+| --color-border | #b7c1ae rules |
+| --color-overlay | #10251d photographic fallback |
+| --content-max | 80rem |
+| --radius-card | 0 |
+| --gutter | clamp(1.25rem,5vw,6rem) |
+| --space-section | clamp(4rem,8vw,8rem) |
+| --font-display | Cormorant Garamond, Georgia, serif |
 
-## Design tokens
-| Token | Intent | Starter value |
-|---|---|---|
-| `--color-bg` | Primary background | `#fbfaf7` |
-| `--color-text` | Primary text | `#17212b` |
-| `--color-muted` | Supporting text | `#576574` |
-| `--color-accent` | Brand accent | `#245edb` |
-| `--color-border` | Light separators | `#dce1e6` |
-| `--content-max` | Large content width | `72rem` |
-| `--radius-card` | Cards | `1rem` |
-| `--space-section` | Fluid section spacing | `clamp(4rem, 7vw, 7rem)` |
-
-## Component design principles
-- One core component purpose per file.
-- No inline hard-coded colors when a design token exists.
-- Preserve comfortable reading width and obvious interactive affordances.
-- Prefer CSS responsive features over JS viewport detection.
-- For a new brand, revise the Markdown first; then implement and visually verify the token changes.
+Thin straight separators, generous negative space, serif display and restrained sans labels. Photo overlays use translucent --color-overlay equivalents; white borders use translucent white. Keep this table synchronized with src/styles/tokens.css. No image-based headings. No fake commercial conversion. Shared header/footer apply to retained /services/ route as well.

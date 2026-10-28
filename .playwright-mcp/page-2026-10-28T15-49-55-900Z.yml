@@ -1,0 +1,292 @@
+- generic [active] [ref=e1]:
+  - region [ref=e2]:
+    - generic [ref=e3]:
+      - link "Cookiebot by Usercentrics - opens in a new window" [ref=e6] [cursor=pointer]:
+        - /url: https://www.cookiebot.com/en/what-is-behind-powered-by-cookiebot/?utm_source=banner_cb&utm_medium=referral&utm_content=v2
+      - generic [ref=e33]:
+        - tabpanel "Consent" [ref=e34]:
+          - generic [ref=e36]:
+            - heading "This website uses cookies" [level=2] [ref=e37]
+            - generic [ref=e38]: We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.
+          - generic [ref=e39]:
+            - group "Consent Selection" [ref=e45]:
+              - generic [ref=e47]:
+                - generic [ref=e48]:
+                  - strong [ref=e50]: Necessary
+                  - generic [ref=e51]:
+                    - checkbox "Necessary" [checked] [disabled]
+                - generic [ref=e52]:
+                  - strong [ref=e54] [cursor=pointer]: Preferences
+                  - switch "Preferences" [ref=e56] [cursor=pointer]
+                - generic [ref=e57]:
+                  - strong [ref=e59] [cursor=pointer]: Statistics
+                  - switch "Statistics" [ref=e61] [cursor=pointer]
+                - generic [ref=e62]:
+                  - strong [ref=e64] [cursor=pointer]: Marketing
+                  - switch "Marketing" [ref=e66] [cursor=pointer]
+            - link "Show details" [ref=e68] [cursor=pointer]:
+              - /url: "#"
+        - text: • • • • • • • • • • • • • • • • •
+      - generic [ref=e72]:
+        - button "Deny" [ref=e73] [cursor=pointer]
+        - button "Allow selection" [ref=e74] [cursor=pointer]
+        - button "Allow all" [ref=e75] [cursor=pointer]
+  - generic [ref=e78]:
+    - link "About us" [ref=e79] [cursor=pointer]:
+      - /url: javascript:;
+    - link "Logo" [ref=e80] [cursor=pointer]:
+      - /url: /en/
+    - link "Book now" [ref=e81] [cursor=pointer]:
+      - /url: https://be.synxis.com/?Hotel=37000&brand=PSSTR&locale=en-EN&adult=2
+  - generic [ref=e82]:
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - link "Close" [ref=e86] [cursor=pointer]:
+          - /url: javascript:;
+        - combobox [ref=e87] [cursor=pointer]:
+          - option "EN" [selected]
+          - option "IT"
+      - link "Logo" [ref=e88] [cursor=pointer]:
+        - /url: /en/
+    - generic [ref=e90]:
+      - generic [ref=e91]:
+        - paragraph [ref=e92]: PassalacquaMoods
+        - list [ref=e93]:
+          - listitem [ref=e94]:
+            - link "Yesterday" [ref=e95] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/yesterday/
+          - listitem [ref=e96]:
+            - link "Villeggiatura" [ref=e97] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/villeggiatura/
+          - listitem [ref=e98]:
+            - link "Interiors" [ref=e99] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/interiors/
+          - listitem [ref=e100]:
+            - link "Gardens" [ref=e101] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/gardens/
+          - listitem [ref=e102]:
+            - link "Taste" [ref=e103] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/taste/
+          - listitem [ref=e104]:
+            - link "Pool" [ref=e105] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/pool/
+          - listitem [ref=e106]:
+            - link "Lake" [ref=e107] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/lake/
+      - generic [ref=e108]:
+        - paragraph [ref=e109]: InsidePassalacqua
+        - list [ref=e110]:
+          - listitem [ref=e111]:
+            - link "Today" [ref=e112] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/today/
+          - listitem [ref=e113]:
+            - link "Rooms" [ref=e114] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/rooms/
+          - listitem [ref=e115]:
+            - link "Dining" [ref=e116] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/dining/
+          - listitem [ref=e117]:
+            - link "Spa" [ref=e118] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/spa/
+          - listitem [ref=e119]:
+            - link "Experiences" [ref=e120] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/experiences/
+          - listitem [ref=e121]:
+            - link "Contacts" [ref=e122] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/contacts/
+          - listitem [ref=e123]:
+            - link "Voices" [ref=e124] [cursor=pointer]:
+              - /url: https://www.passalacqua.it/en/voices/
+    - paragraph [ref=e126]:
+      - link [ref=e127] [cursor=pointer]:
+        - /url: https://www.senseoflake.com/
+      - link "Buy our book" [ref=e128] [cursor=pointer]:
+        - /url: https://www.senseoflake.com/en/categories/books/passalacqua-a-love-letter-to-lake-como/
+  - generic [ref=e129]:
+    - img "01 Passalacqua Lake Como Bo4a4971 Edit" [ref=e131]
+    - heading [level=1] [ref=e133]:
+      - text: Oh beloved places,I have found you.
+      - generic [ref=e134]:
+        - text: Vincenzo Bellini,
+        - emphasis [ref=e135]: La Sonnambula
+  - generic [ref=e136]:
+    - main [ref=e137]:
+      - heading [level=2] [ref=e142]:
+        - text: Passalacqua is unique. Back in the 18
+        - superscript [ref=e143]: th
+        - text: century, it was created as a place of the heart on Lake Como for friends, for love and leisure, for the pleasures of the table and the Italian art of dolce far niente. It is that same place of the heart today. Welcome to Passalacqua.
+      - generic [ref=e146]:
+        - img "Moltrasio And Passalacqua By Night" [ref=e150]
+        - generic [ref=e152]:
+          - heading "The best season to visit Lake Como? Every season." [level=3] [ref=e153]
+          - paragraph [ref=e154]: Spring, when blossom scents the air and daubs white brushstrokes on green hillsides above cobalt blue water. Summer, when long lazy days merge into magical nights alive with promise. Fall, when the woods are tinged with russet and copper, when fragrant truffles and green-gold olive oil enrich the table. Winter, when the lake rests beneath soft winter light, the mountains wear their snowy crowns and the timeless beauty of Lake Como reveals its most intimate and enchanting side. A 5 star hotel on Lake Como with warm, personalised service, Passalacqua is your gateway to a region for all seasons.
+      - generic [ref=e157]:
+        - generic [ref=e158]:
+          - link [ref=e160] [cursor=pointer]:
+            - /url: /winter-taste-lake-como/
+            - img "Cantinone (1)" [ref=e162]
+          - generic [ref=e163]:
+            - heading [level=3] [ref=e164]:
+              - link "Taste the lake this fall and winter" [ref=e165] [cursor=pointer]:
+                - /url: /winter-taste-lake-como/
+            - paragraph [ref=e166]: Chef Viviana Varese aims to create dishes that “quite simply are Passalacqua.” This season, that means truffle-forward menus, traditional feasts in the Cantinone and grand banquets for festivities.
+            - paragraph [ref=e167]:
+              - link "Get a taste of our seasonal fare" [ref=e168] [cursor=pointer]:
+                - /url: /winter-taste-lake-como/
+        - generic [ref=e169]:
+          - link [ref=e171] [cursor=pointer]:
+            - /url: /en/landing/fall-winter-lake-como/
+            - img "Winter Facade Passalacqua" [ref=e173]
+          - generic [ref=e174]:
+            - heading [level=3] [ref=e175]:
+              - link "Celebrate the seasons" [ref=e176] [cursor=pointer]:
+                - /url: /en/landing/fall-winter-lake-como/
+            - paragraph [ref=e177]: As the year comes to an end, the cozy, contemplative vibes of autumn and the festive joy of winter give the estate a dolce energia all its own. And every chance we get to play dress up at Passalacqua, we take it. Think an enchanted pumpkin patch for the spooky season, then a winter wonderland with an ice rink, fireside lounges and JJ Martin’s Winter Garden, before the fireworks over the lake ring in the new year.
+            - paragraph [ref=e178]:
+              - link "Autumn and winter at Passalacqua" [ref=e179] [cursor=pointer]:
+                - /url: /en/landing/fall-winter-lake-como/
+      - separator [ref=e182]
+      - generic [ref=e185]:
+        - img "Bed Enrico Costantini" [ref=e189]
+        - generic [ref=e191]:
+          - heading [level=2] [ref=e192]:
+            - link "Our Suites" [ref=e193] [cursor=pointer]:
+              - /url: /en/rooms/
+          - paragraph [ref=e194]: "Passalacqua’s three moods: Villa, Palazz, Casa al Lago. Passalacqua’s single nature: a stylish room of your own, its every detail curated, your every need embraced."
+          - paragraph [ref=e195]:
+            - link "Discover our Suites" [ref=e196] [cursor=pointer]:
+              - /url: /en/rooms/
+      - separator [ref=e199]
+      - generic [ref=e202]:
+        - generic [ref=e203]:
+          - link [ref=e205] [cursor=pointer]:
+            - /url: /en/rooms/#palazz
+            - img "Passalacqua Luxury Hotel Lake Como 19" [ref=e207]
+          - heading [level=3] [ref=e209]:
+            - link "Palazz" [ref=e210] [cursor=pointer]:
+              - /url: /en/rooms/#palazz
+        - generic [ref=e211]:
+          - link [ref=e213] [cursor=pointer]:
+            - /url: /en/rooms/#villa
+            - img "Passalacqua Luxury Hotel Lake Como 44" [ref=e215]
+          - heading [level=3] [ref=e217]:
+            - link "Villa" [ref=e218] [cursor=pointer]:
+              - /url: /en/rooms/#villa
+        - generic [ref=e219]:
+          - link [ref=e221] [cursor=pointer]:
+            - /url: /en/rooms/#casa-al-lago
+            - img "Passalacqua Luxury Hotel Lake Como 62" [ref=e223]
+          - heading [level=3] [ref=e225]:
+            - link "Casa al Lago" [ref=e226] [cursor=pointer]:
+              - /url: /en/rooms/#casa-al-lago
+      - separator [ref=e229]
+      - generic [ref=e232]:
+        - generic [ref=e233]:
+          - paragraph [ref=e234]: Voices
+          - paragraph [ref=e235]: The light changes every minute, every second
+          - paragraph [ref=e236]: “I’ve lived here my whole life and I’m out on the water pretty much every day. But I never get tired of looking at the lake." — Beppe the Boatman
+          - paragraph [ref=e237]:
+            - link "Read the Story" [ref=e238] [cursor=pointer]:
+              - /url: /en/voices/the-light-changes-every-minute-every-second/
+          - paragraph [ref=e239]:
+            - link "Discover all voices" [ref=e240] [cursor=pointer]:
+              - /url: /en/voices/
+        - generic [ref=e242]:
+          - img "Lake Como Luxury Hotel Passalacqua 77 02" [ref=e244]
+          - img "Stephan Valentin W5r Meeiudw Unsplash" [ref=e246]
+      - separator [ref=e249]
+      - generic [ref=e252]:
+        - img "PAS Assouline Web" [ref=e256]
+        - generic [ref=e258]:
+          - heading [level=2] [ref=e259]:
+            - link "A Love Letter to Lake Como" [ref=e260] [cursor=pointer]:
+              - /url: https://www.grandhoteltremezzo.com/
+          - paragraph [ref=e261]: Our book
+          - paragraph [ref=e262]: “Dear Passalacqua,We first met you on a September day some years back. It still feels like yesterday. That meeting changed our lives – and yours”.This small but genuine declaration of amore serves as the introduction to a much longer love letter – in the form of a book, published with Assouline. A book we have long desired, a gift we have long promised ourselves, our guests, and all those who have followed us on this inspiring voyage, one that has come to fruition thanks to our friends Daria Reina and Andrea Ferolla, talented creative directors who have channelled our passion for Passalacqua into a moving collage of heartfelt words, evocative photographs and chic illustrations.
+          - paragraph [ref=e263]:
+            - link "buy our book" [ref=e264] [cursor=pointer]:
+              - /url: https://www.senseoflake.com/en/categories/books/passalacqua-a-love-letter-to-lake-como/
+      - generic [ref=e267]:
+        - img "0G5A0626" [ref=e271]
+        - generic [ref=e273]:
+          - heading [level=2] [ref=e274]:
+            - link "Grand Hotel Tremezzo" [ref=e275] [cursor=pointer]:
+              - /url: https://www.grandhoteltremezzo.com/
+          - paragraph [ref=e276]: Our Sister Property
+          - paragraph [ref=e277]:
+            - text: The Grand Hotel Tremezzo is housed in an iconic art nouveau villa on the western shores of Lake Como, with views across the crystalline waters towards Bellagio and the sunset-lit Grigne mountain range. Generations of travelers have fallen in love with this legendary hotel’s sumptuous rooms and suites, three pools, lakeside private beach and verdant private park – not to mention its dedication to the warmest hospitality
+            - emphasis [ref=e278]: all’italiana
+            - text: .
+          - paragraph [ref=e279]:
+            - link "Visit the site" [ref=e280] [cursor=pointer]:
+              - /url: https://www.grandhoteltremezzo.com/
+      - generic [ref=e283]:
+        - img "Casabianca Entrance (1) 1" [ref=e287]
+        - generic [ref=e289]:
+          - heading [level=2] [ref=e290]:
+            - link "CASABIANCA" [ref=e291] [cursor=pointer]:
+              - /url: https://casabiancacomo.com/en/
+          - paragraph [ref=e292]: A VILLA, A COLLECTION, COMO
+          - paragraph [ref=e293]
+          - heading "Gathered over time, guided by instinct and curated with love and attention. A selection of rare 20th and 21st century art collected by Paolo and Antonella De Santis takes up residence in a splendid villa for all the city and the world to enjoy." [level=3] [ref=e294]
+          - paragraph [ref=e295]:
+            - link "DISCOVER THE COLLECTION" [ref=e296] [cursor=pointer]:
+              - /url: https://casabiancacomo.com/en/
+    - generic [ref=e298]:
+      - generic [ref=e299]:
+        - paragraph
+        - list [ref=e300]:
+          - listitem [ref=e301]:
+            - link "Newsletter" [ref=e302] [cursor=pointer]:
+              - /url: /en/footer/newsletter/
+          - listitem [ref=e303]:
+            - link "TimeFrames" [ref=e304] [cursor=pointer]:
+              - /url: /en/footer/timeframes-insights-luxury-lake-como-hotel/
+          - listitem [ref=e305]:
+            - link "Privacy" [ref=e306] [cursor=pointer]:
+              - /url: /en/footer/privacy/
+          - listitem [ref=e307]:
+            - link "Careers" [ref=e308] [cursor=pointer]:
+              - /url: /en/footer/careers/
+          - listitem [ref=e309]:
+            - link "Company Info & Accessibility" [ref=e310] [cursor=pointer]:
+              - /url: /en/footer/company-info-accessibility/
+          - listitem [ref=e311]:
+            - link "GDS Codes" [ref=e312] [cursor=pointer]:
+              - /url: /en/footer/gds-codes/
+          - listitem [ref=e313]:
+            - link "Affiliations" [ref=e314] [cursor=pointer]:
+              - /url: /en/footer/affiliations/
+        - link "Cookie Preferences" [ref=e315] [cursor=pointer]:
+          - /url: javascript:Cookiebot.renew()
+      - generic [ref=e316]:
+        - list [ref=e317]:
+          - listitem [ref=e318]:
+            - link [ref=e319] [cursor=pointer]:
+              - /url: https://www.theworlds50best.com/hotels/the-list/passalacqua.html
+              - img "World's 50 Best Hotels 2024" [ref=e320]
+          - listitem [ref=e321]:
+            - link [ref=e322] [cursor=pointer]:
+              - /url: https://www.theworlds50best.com/hotels/the-list/passalacqua.html
+              - img "World's 50 Best Hotels 2024" [ref=e323]
+          - listitem [ref=e324]:
+            - link [ref=e325] [cursor=pointer]:
+              - /url: https://www.theworlds50best.com/hotels/the-list/passalacqua.html
+              - img "World's 50 Best Hotels 2025" [ref=e326]
+          - listitem [ref=e327]:
+            - link [ref=e328] [cursor=pointer]:
+              - /url: "#"
+              - img "The 50 Best Hotels" [ref=e329]
+          - listitem [ref=e330]:
+            - link [ref=e331] [cursor=pointer]:
+              - /url: "#"
+              - img "Michelin 2025" [ref=e332]
+        - list [ref=e333]:
+          - listitem [ref=e334]:
+            - link [ref=e335] [cursor=pointer]:
+              - /url: https://preferredhotels.com/iprefer/enroll?enrollcode=MXPPA&hotel=MXPPA
+              - img "I Prefer Hotel Rewards" [ref=e336]
+            - link [ref=e337] [cursor=pointer]:
+              - /url: https://preferredhotels.com/hotels/italy/passalacqua
+              - img "Preferred Hotels" [ref=e338]
+  - iframe [aria-hidden] [ref=e339]

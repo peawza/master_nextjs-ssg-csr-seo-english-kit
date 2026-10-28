@@ -1,12 +1,16 @@
-:root {
-  --color-bg: #fbfaf7;
-  --color-surface: #ffffff;
-  --color-text: #17212b;
-  --color-muted: #576574;
-  --color-accent: #245edb;
+﻿:root {
+  --color-bg: #f7f5ee;
+  --color-surface: #eeefe4;
+  --color-text: #283c35;
+  --color-muted: #536359;
+  --color-accent: #526747;
   --color-accent-text: #ffffff;
-  --color-border: #dce1e6;
-  --content-max: 72rem;
-  --radius-card: 1rem;
-  --space-section: clamp(4rem, 7vw, 7rem);
+  --color-border: #b7c1ae;
+  --color-white: #ffffff;
+  --color-overlay: #10251d;
+  --content-max: 80rem;
+  --radius-card: 0;
+  --gutter: clamp(1.25rem, 5vw, 6rem);
+  --space-section: clamp(4rem, 8vw, 8rem);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
 }

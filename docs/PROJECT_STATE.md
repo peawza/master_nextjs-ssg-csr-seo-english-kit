@@ -1,31 +1,20 @@
-# PROJECT STATE — Canonical AI Handoff
+﻿# PROJECT STATE — Canonical AI Handoff
 
 Last updated: 2026-10-28 (Asia/Bangkok)
-Status: **REFERENCE SCAFFOLD CREATED — NOT VERIFIED BY BUILD**
+Status: **REV-001 IMPLEMENTED — FINAL VERIFICATION IN PROGRESS**
 
-## Project purpose
-SEO-first marketing website with build-time static HTML, lightweight client interactions, shared Markdown design system and free static deployment to Cloudflare Pages.
+## Current implementation
+Villa Luma fictional single-page hospitality design study. Next.js App Router static export, original English content, locally hosted licensed images/font, CSS Modules/tokens, accessible dialog navigation and progressive section motion. /services/ retained with shared study header/footer. No backend, tracking or booking. No deployment.
 
-## Implemented in the starter kit
-- English master prompt, shared rules and agent-specific entrypoints.
-- Sample semantic homepage, static services route, CSS tokens and mobile navigation.
-- Example metadata, sitemap/robots handlers and Cloudflare Pages header file.
-- Sample static HTML validation script and PR-level agent log checker.
+## Verified so far
+- Dependency install/lockfile: PASS, npm audit 0 vulnerabilities at installation.
+- Typecheck / lint / production build / static HTML checks: PASS.
+- Chromium browser suite: PASS 17/17 including 8 widths and screenshot regressions.
+- Firefox/WebKit: installation in progress.
+- Lighthouse: measurements in progress; do not quote scores yet.
 
-## Verification results
-- Files were generated and ZIP structure checked: **YES**.
-- npm install: **NOT RUN** (npm registry unavailable in the file-generation runtime).
-- Typecheck / ESLint / Next build / Playwright / Lighthouse: **NOT RUN**.
-- Production deployment: **NOT RUN**.
+## Constraints
+example.com remains a deliberate local placeholder. Global noindex/follow and X-Robots-Tag protect the fictional study. Do not enable indexing or publish without domain/content review. Stock imagery is illustrative, not an actual property. See asset registry and verification report.
 
-## Known placeholders and risks
-- Domain is `https://example.com`; change before launch.
-- Business copy and email are placeholders; confirm factual claims.
-- Dependencies are a starter range, not a committed lockfile; verify compatible stable versions and create lockfile.
-- Playwright/Lighthouse tooling must be installed and configured by the implementing agent.
-
-## Next suggested task
-BOOT-001: Verify dependencies, install, create package lock, run typecheck/lint/build; fix any failures. Create a dated agent log with exact commands and results.
-
-## Handoff protocol
-Read `AGENTS.md` → this file → relevant design specs → recent agent logs → git status. After task completion, update this file and record measured validation results.
+## Next action
+Finish Firefox/WebKit tests and Lighthouse, review final diff and update final results. Task: task.md; log: docs/agent-logs/2026-10-28-REV-001-Codex.md; evidence: docs/reverse-engineering/passalacqua/.

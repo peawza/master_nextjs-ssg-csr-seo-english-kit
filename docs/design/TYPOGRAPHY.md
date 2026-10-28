@@ -1,8 +1,3 @@
-# Typography
-
-- Base font: use a fast system stack initially; self-host a properly licensed Thai-capable font when approved.
-- Use `font-display: swap` or another documented font-loading strategy if custom fonts are adopted.
-- Fluid heading sizes with `clamp()`, no text rendered as images for meaningful copy.
-- Base body `1rem`, line-height around `1.65` for Thai/English readability; avoid excessively long paragraph widths.
-- H1 is the primary editorial heading; H2/H3 follow content hierarchy, not typography-size convenience.
-- In mobile viewport widths 320–390 px, check Thai word wrapping, line height and button overflow.
+﻿# Typography — REV-001
+Display: self-hosted Cormorant Garamond Latin WOFF2, weights 400–500, SIL OFL 1.1 stored alongside font. Font display swap; Georgia fallback. Body: Arial/Helvetica/system sans 16px/1.7. English content, lang=en. Italic display uses browser synthesis from the upright variable font; intentional adaptation rather than original Canela.
+Hero clamp(3.5rem,6.2vw,6.5rem)/.98; section headings clamp(2.6rem,4.6vw,4.8rem)/1.08; introduction clamp(2.3rem,4vw,4rem)/1.15. Labels .68rem, .19em tracking. No text rasterization. Check 320px wrapping and 200% zoom. Heading hierarchy is semantic, not chosen for size.

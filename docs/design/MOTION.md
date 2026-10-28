@@ -1,9 +1,3 @@
-# Motion & Interaction Guidelines
-
-- Motion must clarify hierarchy or interaction; it must not delay access to core content.
-- Default to CSS transitions and browser-native smoothness; GSAP is optional and should be justified by a real design brief.
-- If GSAP is installed, isolate it in `src/components/interactive/` and clean up listeners/timelines on unmount.
-- Prefer transforms/opacity over layout-triggering animation; avoid scroll-bound animation loops where possible.
-- `prefers-reduced-motion: reduce`: minimize or remove non-essential movement.
-- Do not delay visible H1, CTA or SEO content until after JS hydration.
-- Focus, hover and active states must remain visible without motion.
+﻿# Motion — REV-001
+Chosen local defaults (not measured reference timings): hover/color180ms, menu entry250ms, section reveal400ms with16px translation and .65→1 opacity. CSS for menu/links, IntersectionObserver + browser animation for one-shot section enhancement. No GSAP.
+Content initially visible. Hero/H1/CTA never animated or hydration-gated. Native dialog manages focus containment and Escape; dismissal restores button, same-page anchor navigation focuses target. CSS :has(dialog[open]) locks body scroll only while open. Observer, media listener and animations cleaned up on unmount. Reduced motion disables CSS transitions/animations, skips reveal and cancels running reveal when preference changes. No forced scroll or autoplay.

@@ -1,9 +1,11 @@
-import { globalIgnores } from 'eslint/config';
+﻿import { globalIgnores } from 'eslint/config';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTypescript from 'eslint-config-next/typescript';
 
-export default [
+const config = [
   ...nextVitals,
   ...nextTypescript,
-  globalIgnores(['.next/**', 'out/**', 'next-env.d.ts']),
+  globalIgnores(['.next/**', 'out/**', 'next-env.d.ts', 'playwright-report/**', 'test-results/**', 'lighthouse-results/**', '.playwright-mcp/**']),
 ];
+
+export default config;
