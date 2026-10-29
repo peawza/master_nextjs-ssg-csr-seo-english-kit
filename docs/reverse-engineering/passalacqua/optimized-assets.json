@@ -231,6 +231,17 @@
     "size": 27624
   },
   {
+    "path": "public/images/lake-mobile-768.avif",
+    "source": "public/images/lake-1920.webp",
+    "format": "heif",
+    "width": 768,
+    "height": 1152,
+    "channels": 3,
+    "premultiplied": false,
+    "hasAlpha": false,
+    "size": 36883
+  },
+  {
     "path": "public/images/lake-mobile-960.avif",
     "source": "public/images/lake-1920.webp",
     "format": "heif",

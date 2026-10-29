@@ -8,7 +8,8 @@ for(const name of ['lake','room','terrace','dining','garden']) {
   records.push({path,source:`public/images/${name}-1920.webp`,...info});
  }
 }
-for(const width of [640,960]) {
+// 768w covers 412 CSS px at DPR 1.75 (common Android); without it the browser jumps to 960w.
+for(const width of [640,768,960]) {
  const path=`public/images/lake-mobile-${width}.avif`;
  const info=await sharp('public/images/lake-1920.webp').resize(width,Math.round(width*1.5),{fit:'cover',position:'centre'}).avif({quality:42,effort:5}).toFile(path);
  records.push({path,source:'public/images/lake-1920.webp',...info});

@@ -83,10 +83,10 @@ A → B → C → D → E → F → G → H/I/J → handoff
 จบงานเมื่อทุก section ใช้ได้ ไม่มี P0/P1, review diff แล้ว และอัปเดต log/state พร้อม next action; สิ่งที่ยังตรวจไม่ได้ห้ามทำเครื่องหมายผ่าน
 
 ## งานต่อ (REV-002, ไม่บังคับ)
-- ลด mobile LCP ให้ต่ำกว่า 2.5s
-- ลบ starter components ที่ไม่ได้ใช้: src/components/sections/HomeSections.tsx, HeroSection.tsx, src/components/interactive/MobileNav.tsx
-- audit media loading ของต้นฉบับ (ปิดข้อค้างใน REV-001B)
-- ทดสอบ screen reader ด้วยคน และกำหนดโดเมนจริงก่อนเปิด index
+- [ ] ลด mobile LCP ให้ต่ำกว่า 2.5s — ทำบางส่วน: เพิ่มภาพ hero 768w ได้ median 2800ms (เดิม 2896ms) ยังไม่ผ่านเป้า สาเหตุหลักคือ framework JS ~148KB ใน Lantern LCP graph (วินิจฉัย: ตัด JS แล้วได้ 1580ms) ต้องตัดสินใจเชิงสถาปัตยกรรม/ADR ก่อนทำต่อ
+- [x] ลบ starter components ที่ไม่ได้ใช้: src/components/sections/HomeSections.tsx, HeroSection.tsx, src/components/interactive/MobileNav.tsx — ลบแล้วพร้อม CSS ที่ไม่ได้ใช้ใน sections.module.css (REV-002)
+- [ ] audit media loading ของต้นฉบับ (ปิดข้อค้างใน REV-001B)
+- [ ] ทดสอบ screen reader ด้วยคน และกำหนดโดเมนจริงก่อนเปิด index
 
-Log: docs/agent-logs/2026-10-28-REV-001-Codex.md, docs/agent-logs/2026-10-29-REV-001-KIRO.md
+Log: docs/agent-logs/2026-10-28-REV-001-Codex.md, docs/agent-logs/2026-10-29-REV-001-KIRO.md, docs/agent-logs/2026-10-29-REV-002-KIRO.md
 State: docs/PROJECT_STATE.md

@@ -3,4 +3,4 @@ Mobile-first behavior; single-column editorial/cards below 768px, two-column edi
 Landscape image 3:2; portrait 4:5; suites desktop 3:4/mobile4:3. Intrinsic dimensions plus object-fit cover. CSS responsive srcset files, no runtime image optimization. Full-screen menu scrolls internally and uses native dialog modal semantics. Footer always offers navigation without JS.
 Test widths 320/375/390/768/1024/1280/1440/1920. No clipping or accidental horizontal scroll. Preserve readable fallbacks if media/fonts fail. Main content and every linked section focusable with tabindex=-1.
 
-Performance refinement: AVIF sources at 640/960/1280/1920 with WebP fallback; hero uses a center-cropped 2:3 mobile AVIF below768px. Existing CSS display ratios stay unchanged.
+Performance refinement: AVIF sources at 640/960/1280/1920 with WebP fallback; hero uses a center-cropped 2:3 mobile AVIF below768px at 640/768/960w (768w added in REV-002 so 412px at DPR 1.75 no longer jumps to 960w). Existing CSS display ratios stay unchanged.
