@@ -10,7 +10,7 @@ for(const profile of ['mobile','desktop']) {
   const chrome=await launch({chromePath:chromium.executablePath(),chromeFlags:['--headless','--no-sandbox']});
   let timer;
   try {
-   const desktopCfg = profile === 'desktop' ? {formFactor:'desktop',throttling:{rttMs:40,throughputKbps:10240,requestLatencyMs:0,downloadThroughputKbps:0,uploadThroughputKbps:0,cpuSlowdownMultiplier:1},screenEmulation:{mobile:false,width:1350,height:940,deviceScaleFactor:1,disabled:false},emulatedUserAgent:''} : {};
+   const desktopCfg = profile === 'desktop' ? {formFactor:'desktop',throttling:{rttMs:40,throughputKbps:10240,requestLatencyMs:0,downloadThroughputKbps:0,uploadThroughputKbps:0,cpuSlowdownMultiplier:1},screenEmulation:{mobile:false,width:1350,height:940,deviceScaleFactor:1,disabled:false}} : {};
    const result=await Promise.race([
     lighthouse('http://127.0.0.1:4173/',{port:chrome.port,output:'json',logLevel:'error',maxWaitForLoad:45000,maxWaitForFcp:30000,onlyCategories:['performance','accessibility','best-practices','seo'],...desktopCfg}),
     new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error(`${profile}-${run} exceeded 120 seconds`)),120000);}),
