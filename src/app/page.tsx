@@ -5,10 +5,11 @@ import { MotionEnhancer } from '@/components/interactive/MotionEnhancer';
 import { media } from '@/content/villa';
 import { serializeJsonLd } from '@/lib/seo/json-ld';
 import { siteConfig } from '@/config/site';
+import { absoluteUrl } from '@/lib/seo/metadata';
 import styles from '@/styles/villa.module.css';
 
 export default function HomePage() {
-  const website = { '@context': 'https://schema.org', '@type': 'WebSite', name: siteConfig.name, description: siteConfig.description, url: siteConfig.url };
+  const website = { '@context': 'https://schema.org', '@type': 'WebSite', name: siteConfig.name, description: siteConfig.description, url: absoluteUrl('/') };
   return (
     <main id="main-content" tabIndex={-1}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(website) }} />

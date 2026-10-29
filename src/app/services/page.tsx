@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { homeContent } from '@/content/home';
+import { pageMetadata } from '@/lib/seo/metadata';
 import styles from '@/styles/sections.module.css';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Services',
   description: 'Explore web design, frontend development and technical SEO services.',
-  alternates: { canonical: '/services/' },
-};
+  path: '/services/',
+});
 
 export default function ServicesPage() {
   return (

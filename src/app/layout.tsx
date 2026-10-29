@@ -1,6 +1,7 @@
 ﻿import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { siteConfig } from '@/config/site';
+import { absoluteUrl, openGraphBase } from '@/lib/seo/metadata';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import './globals.css';
@@ -12,14 +13,12 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   icons: { icon: '/favicon.svg' },
   alternates: { canonical: '/' },
+  // Home page values; other routes override the whole object via pageMetadata().
   openGraph: {
-    type: 'website',
-    url: siteConfig.url,
+    ...openGraphBase,
+    url: absoluteUrl('/'),
     title: siteConfig.name,
     description: siteConfig.description,
-    siteName: siteConfig.name,
-    locale: siteConfig.locale,
-    images: [{ url: '/images/lake-1280.webp', width: 1280, height: 853, alt: 'Villa Luma fictional lakeside design study' }],
   },
   robots: { index: false, follow: true },
 };

@@ -1,6 +1,6 @@
 ﻿# PROJECT STATE — Canonical AI Handoff
 
-Last updated: 2026-10-29 20:15 (Asia/Bangkok)
+Last updated: 2026-10-30 (Asia/Bangkok)
 Status: **REV-006 COMPLETE (investigation) — no P0/P1; ADR-0003 Proposed, awaiting decision; code = 738c5ae, all gates green**
 
 ## Current implementation
@@ -26,7 +26,7 @@ Villa Luma fictional single-page hospitality design study. Next.js App Router st
 example.com remains a deliberate local placeholder. Global noindex/follow and X-Robots-Tag protect the fictional study. Do not enable indexing or publish without domain/content review. lighthouse-results/optimized/desktop-*.json are not valid desktop data; rev-002-attempt1-noisy and rev-003-protoB* are diagnostic only.
 
 ## Uncommitted changes
-REV-004/005 committed as 738c5ae. REV-006 docs only: ADR-0003, VERIFICATION_REPORT.md, task.md, this file, docs/agent-logs/2026-10-29-REV-006-KIRO.md. No source change. Not committed; awaiting user.
+REV-004/005 committed as 738c5ae. REV-006 docs only: ADR-0003, VERIFICATION_REPORT.md, task.md, this file, docs/agent-logs/2026-10-29-REV-006-KIRO.md. SEO-007 source and verification changes are in progress in the working tree (Kiro); SEO-008 adds a separate release/indexing readiness checklist to task.md and its own log (Codex). Nothing is committed; preserve both workstreams.
 
 ## Next action
-User decision on ADR-0003 (recommend A). If B is chosen: REV-007 to prototype a Pages Router zero-runtime home page with vanilla menu/reveal and keep all tests green. Also: measure INP on a real mid-range Android device, manual screen-reader pass, real domain before indexing. Log: docs/agent-logs/2026-10-29-REV-006-KIRO.md.
+Provide the SEO-008 release inputs: production HTTPS origin, approved public email, approval/replacement of fictional copy and illustrative media, and explicit authorization to allow indexing. Then update source metadata/headers and verify every exported SEO URL. Separately, decide ADR-0003 (recommend A). If B is chosen: REV-007 to prototype a Pages Router zero-runtime home page with vanilla menu/reveal and keep all tests green. Also measure INP on a real mid-range Android device and complete a manual screen-reader pass. Logs: docs/agent-logs/2026-10-29-REV-006-KIRO.md; docs/agent-logs/2026-10-30-SEO-008-Codex.md.

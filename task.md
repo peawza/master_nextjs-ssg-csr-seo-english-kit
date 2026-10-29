@@ -91,5 +91,29 @@ A → B → C → D → E → F → G → H/I/J → handoff
 - [x] audit media loading ของต้นฉบับ (ปิดข้อค้างใน REV-001B) — REV-004: มือถือ OBSERVED, desktop UNKNOWN (Cloudflare 403)
 - [ ] ทดสอบ screen reader ด้วยคน และกำหนดโดเมนจริงก่อนเปิด index
 
+## งานต่อ (SEO-008 — Release and indexing readiness, 2026-10-30)
+สถานะ: **BLOCKED — รอข้อมูลสำหรับเผยแพร่จากเจ้าของเว็บไซต์**. ห้ามถอด `noindex` หรือ publish จนกว่ารายการบังคับด้านล่างจะได้รับการอนุมัติ
+
+### สิ่งที่ตรวจพบ
+- [x] ตรวจ source SEO: `src/config/site.ts` ยังมี `https://example.com` และ `hello@example.com`
+- [x] ตรวจ metadata/header: `src/app/layout.tsx` ส่ง `noindex, follow`; `public/_headers` ส่ง `X-Robots-Tag: noindex, follow`
+- [x] ตรวจเนื้อหา/สื่อ: เว็บไซต์และ footer ระบุชัดว่าเป็น fictional/imaginary design study, ไม่รับจองหรือให้บริการจริง และภาพเป็น illustrative
+- [x] ยืนยันว่าการเปิด index ณ สถานะนี้ไม่พร้อมเผยแพร่ และไม่ควรใช้ `example.com` เป็น canonical, Open Graph หรือ sitemap
+
+### ข้อมูลที่ต้องได้รับก่อนเริ่มแก้ source
+- [ ] Production origin แบบเต็มรูปแบบ (ตัวอย่าง `https://www.your-domain.tld`) และยืนยันว่า DNS/Cloudflare Pages จะใช้ origin เดียวกัน
+- [ ] Email ติดต่อสาธารณะที่อนุมัติแล้ว
+- [ ] คำยืนยันว่า brand “Villa Luma”, เนื้อหา, ข้อความไม่มีบริการ/การจอง และภาพ illustrative เป็นสิ่งที่ต้องการเผยแพร่จริง **หรือ** ส่งเนื้อหา/asset/สิทธิ์ใช้งานทดแทนที่อนุมัติแล้ว
+- [ ] ยืนยันว่าต้องการอนุญาตให้ search engines index เว็บไซต์นี้
+
+### งานที่จะทำหลังได้รับข้อมูล
+- [ ] อัปเดต `siteConfig.url` และ `siteConfig.email`; ตรวจ title/description/OG/Twitter alt ให้ตรงกับเนื้อหาที่อนุมัติ
+- [ ] ถอด metadata robots `noindex` และ `X-Robots-Tag` จาก static/Cloudflare headers
+- [ ] ตรวจ `robots.txt`, sitemap, canonical, Open Graph และ Twitter URL ว่าชี้ HTTPS production origin เดียวกันทุก route
+- [ ] รัน `typecheck`, `lint`, `build`, `verify:html`, browser tests และ Lighthouse production preview (mobile/desktop 3 runs)
+- [ ] deploy แล้วตรวจ response headers, robots, sitemap และ canonical บน production origin ก่อนแจ้ง Google Search Console
+
+เกณฑ์ผ่าน: ไม่มี `example.com`, `hello@example.com`, `noindex` หรือ URL ข้าม origin ใน artifacts ที่ build; ทุก canonical/OG/sitemap/robots ใช้ HTTPS production origin ที่อนุมัติ; verification ผ่าน และ Lighthouse SEO 100 โดยไม่มี SEO audit อื่นล้มเหลว
+
 Log: docs/agent-logs/2026-10-28-REV-001-Codex.md, docs/agent-logs/2026-10-29-REV-001-KIRO.md, docs/agent-logs/2026-10-29-REV-002-KIRO.md
 State: docs/PROJECT_STATE.md

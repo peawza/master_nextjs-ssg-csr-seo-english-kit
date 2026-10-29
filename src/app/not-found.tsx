@@ -1,4 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+// A 404 must not canonicalise to, or preview as, another page. Next.js injects
+// <meta name="robots" content="noindex">, so the inherited robots tag is cleared.
+export const metadata: Metadata = {
+  title: 'Page not found',
+  description: 'The requested page does not exist in this design study.',
+  alternates: { canonical: null },
+  openGraph: null,
+  twitter: null,
+  robots: null,
+};
 
 export default function NotFound() {
   return (
