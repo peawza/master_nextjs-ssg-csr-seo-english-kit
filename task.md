@@ -85,6 +85,7 @@ A → B → C → D → E → F → G → H/I/J → handoff
 ## งานต่อ (REV-002, ไม่บังคับ)
 - [x] REV-003 ตัดสินใจเรื่อง mobile LCP: ADR-0002 (option A) ใช้ค่า devtools throttling เป็นเกณฑ์ ได้ 2104ms ผ่าน; ค่า simulated 2820ms รายงานไว้แต่ไม่ใช้ตัดสิน
 - [x] REV-005 ลด main-thread: เปลี่ยน symbol glyph เป็น SVG icon ลด first layout ~27% (trace 4x CPU); TBT ใน Lighthouse ไม่เปลี่ยนเกินกว่าความผันผวนระหว่างรอบ (ถูก JS ของ framework ครอง)
+- [x] REV-006 วัดต้นทุน JS ฝั่ง client: component ของเราแทบไม่มีผล (ตัดออกแล้ว TBT 367 เทียบกับ 339ms) ต้นทุนมาจาก App Router runtime ทั้งหมด (ตัด framework JS ออกแล้ว TBT 0) เสนอทางเลือกใน ADR-0003 (Proposed) รอตัดสินใจ
 - [ ] (เดิม) ลด mobile LCP ให้ต่ำกว่า 2.5s — ทำบางส่วน: เพิ่มภาพ hero 768w ได้ median 2800ms (เดิม 2896ms) ยังไม่ผ่านเป้า สาเหตุหลักคือ framework JS ~148KB ใน Lantern LCP graph (วินิจฉัย: ตัด JS แล้วได้ 1580ms) ต้องตัดสินใจเชิงสถาปัตยกรรม/ADR ก่อนทำต่อ
 - [x] ลบ starter components ที่ไม่ได้ใช้: src/components/sections/HomeSections.tsx, HeroSection.tsx, src/components/interactive/MobileNav.tsx — ลบแล้วพร้อม CSS ที่ไม่ได้ใช้ใน sections.module.css (REV-002)
 - [x] audit media loading ของต้นฉบับ (ปิดข้อค้างใน REV-001B) — REV-004: มือถือ OBSERVED, desktop UNKNOWN (Cloudflare 403)

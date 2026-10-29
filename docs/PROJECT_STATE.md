@@ -1,7 +1,7 @@
 ﻿# PROJECT STATE — Canonical AI Handoff
 
-Last updated: 2026-10-29 18:45 (Asia/Bangkok)
-Status: **REV-003 + REV-005 COMPLETE — no P0/P1; ADR-0002 accepted; all gates green**
+Last updated: 2026-10-29 20:15 (Asia/Bangkok)
+Status: **REV-006 COMPLETE (investigation) — no P0/P1; ADR-0003 Proposed, awaiting decision; code = 738c5ae, all gates green**
 
 ## Current implementation
 Villa Luma fictional single-page hospitality design study. Next.js App Router static export, original English content, locally hosted licensed images/font, CSS Modules/tokens, accessible dialog navigation and progressive section motion. /services/ retained. Decorative icons are inline SVG (src/components/ui/Icon.tsx). No backend, tracking or booking. No deployment.
@@ -16,16 +16,17 @@ Villa Luma fictional single-page hospitality design study. Next.js App Router st
 
 ## Decisions
 - ADR-0001 static export; ADR-0002 mobile LCP gate uses applied throttling, simulated value reported but not gated (docs/decisions/).
+- ADR-0003 (Proposed, REV-006): client runtime cost. Measured: TBT median 339ms shipped, 367ms with no client components, 0ms with all framework JS removed. The cost is App Router runtime + hydration, not our components. Recommendation: option A (keep, monitor field INP).
 
 ## Known gaps
-- TBT ~480ms under 4x CPU, dominated by React/Next runtime evaluation (chunk 216iyidhmrh3u.js).
+- TBT ~340ms (range 233-658, n=5) / TTI ~3.7s under 4x CPU, set by the React/Next App Router runtime (chunk 216iyidhmrh3u.js). Removing it needs ADR-0003 B/C/D.
 - Firefox/WebKit visual baselines absent; manual screen-reader and real-device checks NOT RUN; desktop reference media loading UNKNOWN (Cloudflare 403).
 
 ## Constraints
 example.com remains a deliberate local placeholder. Global noindex/follow and X-Robots-Tag protect the fictional study. Do not enable indexing or publish without domain/content review. lighthouse-results/optimized/desktop-*.json are not valid desktop data; rev-002-attempt1-noisy and rev-003-protoB* are diagnostic only.
 
 ## Uncommitted changes
-REV-004 docs (MEDIA_LOADING_AUDIT.md, media-loading.json, REFERENCE_AUDIT.md, REV-004 log) and REV-003/005 (ADR-0002, LIGHTHOUSE_POLICY.md, Icon.tsx, 5 components, villa.module.css, test + 3 Chromium snapshots, DESIGN_SYSTEM.md, VERIFICATION_REPORT.md, task.md, this file, REV-005 log). Not committed; awaiting user.
+REV-004/005 committed as 738c5ae. REV-006 docs only: ADR-0003, VERIFICATION_REPORT.md, task.md, this file, docs/agent-logs/2026-10-29-REV-006-KIRO.md. No source change. Not committed; awaiting user.
 
 ## Next action
-Optional REV-006: reduce client JS evaluation cost (audit what MotionEnhancer/SiteMenu pull in; consider a lighter progressive-enhancement approach under ADR-0001) and measure INP on a real mid-range Android device. Also: manual screen-reader pass, real domain before indexing. Logs: docs/agent-logs/2026-10-29-REV-005-KIRO.md, docs/agent-logs/2026-10-29-REV-004-KIRO.md.
+User decision on ADR-0003 (recommend A). If B is chosen: REV-007 to prototype a Pages Router zero-runtime home page with vanilla menu/reveal and keep all tests green. Also: measure INP on a real mid-range Android device, manual screen-reader pass, real domain before indexing. Log: docs/agent-logs/2026-10-29-REV-006-KIRO.md.

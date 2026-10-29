@@ -97,3 +97,17 @@ Lighthouse 13.6.0 after the change:
 | devtools (lighthouse-results/rev-005-devtools) | mobile | 85/85/85 | 2157/2104/2079 | 2104 (REV-004: 2267) | 458/478/504, median 478 (REV-004: 482) | 0.00025 |
 
 A/BP/SEO unchanged (100/100/69, SEO 69 = intentional noindex). Devtools Style & Layout median 709 ms (REV-004 runs 775/988/594). The first-layout cut shows in direct traces, but Lighthouse TBT does not move beyond run-to-run noise. TBT is dominated by script evaluation of chunk 216iyidhmrh3u.js (React/Next runtime, one ~577 ms long task at 4x CPU), and the layout task stays above 50 ms either way.
+
+## REV-006 — client JS cost, 2026-10-29 (Asia/Bangkok, +07:00)
+No shipped change. All experiments reverted (`git restore`) or done on throwaway copies; out/ rebuilt from 738c5ae.
+
+Chunk attribution (gzip): 216iyidhmrh3u.js 71.9 KB React DOM + router core; 1-fibdkr3wypg.js 45.3 KB Next router; SiteMenu chunk 8.0 KB and MotionEnhancer chunk 6.0 KB (part shared runtime); 0cz1d0mv5g_q7.js 39.6 KB noModule polyfills (not run by modern browsers). With no client components the framework chunks are byte-identical and route chunks still total ~12 KB. RSC payload 30,376 B = 59% of index.html.
+
+Lighthouse devtools mode (slow 4G, 4x CPU), mobile, n=5 each:
+| Variant | TBT runs (ms) | Median TBT | Median TTI | Median LCP | 216 chunk scripting runs (ms) |
+|---|---|---|---|---|---|
+| E0 shipped (rev-006-e0-baseline + -b) | 233, 658, 548, 330, 339 | 339 | 3737 | 2259 | 500, 1104, 924, 600, 618 |
+| E1 no client components (rev-006-e1-noclient) | 311, 393, 367, 472, 286 | 367 | 3172 | 1957 | 561, 608, 590, 715, 468 |
+| E2 no Next/React JS (rev-006-e2-nojs) | 0, 0, 0, 0, 0 | 0 | 1940 | 1902 | n/a |
+
+E1's first attempt hit a Lighthouse NO_FCP / cache-clear timeout (environment); the harness retried and the 5 reported runs are clean. E2 is a ceiling only: menu and motion do not work in it. Decision options are in docs/decisions/ADR-0003-client-runtime-cost.md (Proposed).
