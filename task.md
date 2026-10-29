@@ -20,7 +20,7 @@ Next.js App Router + TypeScript strict + CSS Modules/tokens + static export out/
 - [x] เปิด browser ตรวจ DOM/computed styles
 - [x] ภาพ full-page 1440x900, 390x844, 768x1024 และ menu desktop/mobile
 - [x] สำรวจ width 320,375,1024,1280,1920 และ Escape
-- [ ] ตรวจ section closeups, hover/focus, scroll และ media loading เพิ่ม — closeups/hover/focus/scroll มีแล้ว (R08–R13) แต่ media loading ของต้นฉบับยังไม่ได้ audit จึงยังเป็น UNKNOWN
+- [x] ตรวจ section closeups, hover/focus, scroll และ media loading เพิ่ม — closeups/hover/focus/scroll (R08–R13); media loading มือถือ 390x844 OBSERVED ใน REV-004 (MEDIA_LOADING_AUDIT.md) ส่วน desktop ถูก Cloudflare 403 บล็อก headless จึงเป็น UNKNOWN
 หลักฐานต้องมี URL เวลา viewport state OBSERVED/INFERRED/UNKNOWN และ confidence ห้ามอ้าง library/timing ที่ไม่ทราบ ห้ามส่งแบบฟอร์มหรือทำธุรกรรม
 
 ### REV-001C — Specifications before code
@@ -83,9 +83,11 @@ A → B → C → D → E → F → G → H/I/J → handoff
 จบงานเมื่อทุก section ใช้ได้ ไม่มี P0/P1, review diff แล้ว และอัปเดต log/state พร้อม next action; สิ่งที่ยังตรวจไม่ได้ห้ามทำเครื่องหมายผ่าน
 
 ## งานต่อ (REV-002, ไม่บังคับ)
-- [ ] ลด mobile LCP ให้ต่ำกว่า 2.5s — ทำบางส่วน: เพิ่มภาพ hero 768w ได้ median 2800ms (เดิม 2896ms) ยังไม่ผ่านเป้า สาเหตุหลักคือ framework JS ~148KB ใน Lantern LCP graph (วินิจฉัย: ตัด JS แล้วได้ 1580ms) ต้องตัดสินใจเชิงสถาปัตยกรรม/ADR ก่อนทำต่อ
+- [x] REV-003 ตัดสินใจเรื่อง mobile LCP: ADR-0002 (option A) ใช้ค่า devtools throttling เป็นเกณฑ์ ได้ 2104ms ผ่าน; ค่า simulated 2820ms รายงานไว้แต่ไม่ใช้ตัดสิน
+- [x] REV-005 ลด main-thread: เปลี่ยน symbol glyph เป็น SVG icon ลด first layout ~27% (trace 4x CPU); TBT ใน Lighthouse ไม่เปลี่ยนเกินกว่าความผันผวนระหว่างรอบ (ถูก JS ของ framework ครอง)
+- [ ] (เดิม) ลด mobile LCP ให้ต่ำกว่า 2.5s — ทำบางส่วน: เพิ่มภาพ hero 768w ได้ median 2800ms (เดิม 2896ms) ยังไม่ผ่านเป้า สาเหตุหลักคือ framework JS ~148KB ใน Lantern LCP graph (วินิจฉัย: ตัด JS แล้วได้ 1580ms) ต้องตัดสินใจเชิงสถาปัตยกรรม/ADR ก่อนทำต่อ
 - [x] ลบ starter components ที่ไม่ได้ใช้: src/components/sections/HomeSections.tsx, HeroSection.tsx, src/components/interactive/MobileNav.tsx — ลบแล้วพร้อม CSS ที่ไม่ได้ใช้ใน sections.module.css (REV-002)
-- [ ] audit media loading ของต้นฉบับ (ปิดข้อค้างใน REV-001B)
+- [x] audit media loading ของต้นฉบับ (ปิดข้อค้างใน REV-001B) — REV-004: มือถือ OBSERVED, desktop UNKNOWN (Cloudflare 403)
 - [ ] ทดสอบ screen reader ด้วยคน และกำหนดโดเมนจริงก่อนเปิด index
 
 Log: docs/agent-logs/2026-10-28-REV-001-Codex.md, docs/agent-logs/2026-10-29-REV-001-KIRO.md, docs/agent-logs/2026-10-29-REV-002-KIRO.md

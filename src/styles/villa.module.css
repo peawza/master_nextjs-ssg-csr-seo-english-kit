@@ -7,6 +7,7 @@
 .menuIcon { font-family:Arial,sans-serif; font-size:1rem; }
 .headerCta { justify-self:end; font-size:.7rem; letter-spacing:.09em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid var(--color-border); padding:.65rem 0; }
 .headerCta span { margin-left:1rem; }
+.icon { display:inline-block; width:1em; height:1em; vertical-align:-.125em; flex:none; overflow:visible; }
 .label { font-family:Arial,Helvetica,sans-serif; font-size:.68rem; font-weight:400; letter-spacing:.19em; text-transform:uppercase; margin:0 0 1.5rem; }
 .picture { display:block; width:100%; overflow:hidden; background:var(--color-surface); }
 .picture img { display:block; width:100%; height:100%; object-fit:cover; }

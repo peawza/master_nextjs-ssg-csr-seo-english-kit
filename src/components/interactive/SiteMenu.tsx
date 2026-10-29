@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import { studyNavigation } from '@/content/villa';
+import { Icon } from '@/components/ui/Icon';
 import styles from '@/styles/villa.module.css';
 
 export function SiteMenu() {
@@ -50,11 +51,11 @@ export function SiteMenu() {
   return (
     <>
       <button ref={trigger} type="button" className={styles.menuButton} aria-haspopup="dialog" aria-expanded={open} aria-controls="site-menu" onClick={() => { destination.current = null; dialog.current?.showModal(); setOpen(true); }}>
-        <span aria-hidden="true" className={styles.menuIcon}>☰</span><span>Discover</span>
+        <span className={styles.menuIcon}><Icon name="menu" /></span><span>Discover</span>
       </button>
       <dialog ref={dialog} id="site-menu" className={styles.menu} aria-labelledby="menu-title" onKeyDown={containFocus} onClose={finishClose}>
         <div className={styles.menuTop}>
-          <button type="button" className={styles.menuButton} onClick={close} autoFocus>× Close</button>
+          <button type="button" className={styles.menuButton} onClick={close} autoFocus><Icon name="close" /><span>Close</span></button>
           <p className={styles.wordmark} id="menu-title">Villa Luma</p>
           <span className={styles.label}>Design study</span>
         </div>

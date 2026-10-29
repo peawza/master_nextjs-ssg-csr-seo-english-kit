@@ -18,5 +18,10 @@ Make thresholds configurable and record the exact audit environment; do not sile
 - Compress and size images, use modern formats and avoid layout shifts.
 - Motion must respect reduced-motion and not lock main-thread input.
 
+## Mobile LCP measurement mode (ADR-0002)
+- Report two mobile LCP numbers: default simulated (Lantern) and applied throttling (`throttlingMethod: 'devtools'`, Lighthouse mobile slow-4G values, 4x CPU), each a median of 3 runs.
+- The LCP <= 2.5 s gate uses the applied-throttling median. The simulated value (~2.8 s for the current App Router page) is reported, labelled, and not "fixed" with script-deferral hacks.
+- Under applied throttling, also record TBT and long tasks; main-thread cost is the leading INP risk.
+
 ## Required evidence in each performance task log
 Date, URL/build commit, device profile, network simulation, Lighthouse version, category scores, Web Vitals, failed audits and concrete remediation. Write `NOT MEASURED` when results are unavailable.

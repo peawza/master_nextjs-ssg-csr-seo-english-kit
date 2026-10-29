@@ -28,3 +28,6 @@ Screenshots document reference appearance only, never ship as local website imag
 
 ## Additional interaction evidence — 2026-10-28 23:15 Asia/Bangkok
 R08–R13: reference-{desktop,mobile}-{focus,middle,footer}.png. Hover/focus link measured Canela-Light 20px/24px, color white, computed transition 0.25s, native 1px auto outline in both viewport states. This verifies the link transition property only, not a complete animation timeline. Scroll-to-main and footer states captured. Reference desktop/mobile menu, initial and full-page captures exist. No transaction links followed.
+
+## Media loading — 2026-10-29 17:32 Asia/Bangkok (REV-004)
+See MEDIA_LOADING_AUDIT.md and media-loading.json. Mobile 390x844 OBSERVED: every image loads eagerly before scroll (~3 MB), picture with media-query sources and no srcset, images served as image/webp, fonts woff2 with swap and no preload, no video, GSAP named in console warnings. Desktop capture blocked by a Cloudflare 403 challenge for headless UA, so desktop media loading is UNKNOWN.

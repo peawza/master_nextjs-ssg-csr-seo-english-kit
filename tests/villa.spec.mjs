@@ -21,7 +21,7 @@ test('keyboard modal, focus wrapping, Escape, Space and anchor focus', async ({p
  await page.goto('/');
  const trigger=page.getByRole('button',{name:'Discover'});
  await trigger.focus(); await page.keyboard.press('Enter');
- const close=page.getByRole('button',{name:'× Close'});
+ const close=page.getByRole('button',{name:'Close',exact:true});
  await expect(close).toBeFocused();
  await page.keyboard.press('Shift+Tab');
  await expect(page.getByRole('dialog').getByRole('link').last()).toBeFocused();

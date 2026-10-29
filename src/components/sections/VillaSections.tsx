@@ -1,4 +1,5 @@
 ﻿import { StudyImage } from '@/components/ui/StudyImage';
+import { Icon } from '@/components/ui/Icon';
 import { media, suites } from '@/content/villa';
 import styles from '@/styles/villa.module.css';
 
@@ -9,12 +10,12 @@ export function VillaSections() {
         <p className={styles.label}>The art of simply being</p>
         <h2>Some places ask you to do more.<br />This one invites you to <em>just be.</em></h2>
         <p>Imagine a house by the water. Shutters open to the morning, a garden that takes the long way home, a table with room for one more. Welcome to Villa Luma, a daydream of lakeside living.</p>
-        <span className={styles.ornament} aria-hidden="true">❧</span>
+        <span className={styles.ornament}><Icon name="ornament" /></span>
       </section>
       <section id="seasons" tabIndex={-1} className={styles.section}>
         <div className={styles.editorial} data-reveal>
           <StudyImage image={media.lake} className={styles.landscape} />
-          <div className={styles.prose}><p className={styles.label}>01 / Through the seasons</p><h2>A different light.<br /><em>The same magic.</em></h2><p>Spring arrives in a thousand shades of green. Summer lingers over the water. Autumn brings gold to the hills, and winter makes room for quiet. There is no perfect season for a daydream. There is only yours.</p><a className={styles.textLink} href="#seasonal-notes">Follow the seasons <span aria-hidden="true">↗</span></a></div>
+          <div className={styles.prose}><p className={styles.label}>01 / Through the seasons</p><h2>A different light.<br /><em>The same magic.</em></h2><p>Spring arrives in a thousand shades of green. Summer lingers over the water. Autumn brings gold to the hills, and winter makes room for quiet. There is no perfect season for a daydream. There is only yours.</p><a className={styles.textLink} href="#seasonal-notes">Follow the seasons <span><Icon name="arrowUpRight" /></span></a></div>
         </div>
         <div id="seasonal-notes" tabIndex={-1} className={styles.seasonal}>
           <article data-reveal><StudyImage image={media.dining} className={styles.portrait} /><p className={styles.label}>At the table</p><h3>A taste of the unhurried</h3><p>Fresh bread, the scent of herbs, something delicious passed from hand to hand. Our imagined table celebrates the pleasure of taking your time.</p></article>
@@ -27,7 +28,7 @@ export function VillaSections() {
       </section>
       <section id="stories" tabIndex={-1} className={styles.story}>
         <StudyImage image={media.lake} sizes="100vw" />
-        <div className={styles.storyText}><p className={styles.label}>03 / Little stories</p><h2>The lake keeps<br /><em>its own time.</em></h2><p>A boat slips out of view. Light moves across the hillside. In this imagined moment, nothing needs to happen for everything to feel different.</p><a className={styles.lightLink} href="#journal">A page from our journal ↗</a></div>
+        <div className={styles.storyText}><p className={styles.label}>03 / Little stories</p><h2>The lake keeps<br /><em>its own time.</em></h2><p>A boat slips out of view. Light moves across the hillside. In this imagined moment, nothing needs to happen for everything to feel different.</p><a className={styles.lightLink} href="#journal">A page from our journal <Icon name="arrowUpRight" /></a></div>
       </section>
       <section id="journal" tabIndex={-1} className={styles.section}>
         <div className={`${styles.editorial} ${styles.journal}`} data-reveal><div className={styles.prose}><p className={styles.label}>04 / The journal</p><h2>Collected moments.<br /><em>Kept close.</em></h2><p>A room filled with afternoon light. A conversation that wanders past midnight. The first cool swim of the summer. This is a journal of small things, and the space they leave in our lives.</p><p>Turn the imaginary page. Leave a little room for a memory of your own.</p></div><div className={styles.journalFrame}><StudyImage image={media.terrace} className={styles.portrait} /><span className={styles.journalCaption}>Notes on a slower life — Volume 01</span></div></div>
