@@ -1,0 +1,35 @@
+# Secrets and local configuration: never part of any image or artifact.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.wrangler/
+.dev.vars
+
+# VCS, editor and agent state
+.git/
+.github/
+.kiro/
+.vscode/
+.playwright-mcp/
+
+# Dependencies and build outputs (rebuilt inside the image)
+node_modules/
+.next/
+out/
+.artifacts/
+*.tsbuildinfo
+
+# Reports, logs and local evidence
+playwright-report/
+test-results/
+lighthouse-results/
+*.log
+docs/reverse-engineering/passalacqua/screenshots/
+tests/villa.spec.mjs-snapshots/
+
+# Docker/batch tooling itself is not needed inside the build
+Dockerfile
+.dockerignore
+*.bat

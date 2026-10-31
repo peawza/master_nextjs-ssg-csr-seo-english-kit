@@ -91,6 +91,22 @@ A → B → C → D → E → F → G → H/I/J → handoff
 - [x] audit media loading ของต้นฉบับ (ปิดข้อค้างใน REV-001B) — REV-004: มือถือ OBSERVED, desktop UNKNOWN (Cloudflare 403)
 - [ ] ทดสอบ screen reader ด้วยคน และกำหนดโดเมนจริงก่อนเปิด index
 
+## งานต่อ (SEO-007 — Per-route metadata correctness, 2026-10-30)
+สถานะ: **COMPLETED — Kiro (commit c6c84aa)**. งานนี้แก้ความถูกต้องของ SEO metadata ใน static export แต่ไม่เปลี่ยนนโยบาย `noindex`, production domain หรือ copy ของเว็บไซต์
+
+### ข้อบกพร่องที่แก้แล้ว
+- [x] `/services/` มี canonical, `og:url`, title, description และ Twitter metadata ของ route ตัวเองแล้ว (ใช้ `pageMetadata()` ใน src/lib/seo/metadata.ts)
+- [x] `404.html` ไม่มี canonical และ social preview แล้ว; มี `noindex` รายการเดียว และ title "Page not found"
+- [x] Home WebSite JSON-LD URL = `https://example.com/` ตรงกับ canonical
+- [x] `verify:html` ตรวจ OG/Twitter, JSON-LD, 404 head, robots และ sitemap แล้ว (ก่อนแก้ FAIL 9 ข้อตรงกับข้อบกพร่อง; หลังแก้ PASS 95 FAIL 0)
+
+### เกณฑ์จบงาน SEO-007
+- [x] `typecheck`, `lint`, `build`, `verify:html` ผ่าน (exit 0 ทั้งหมด บน HEAD c6c84aa)
+- [x] Browser suite: 45 passed / 6 skipped / 0 failed เท่ากับ baseline
+- [x] บันทึกผลจริง, diff review, state และ Kiro log เสร็จ ไม่เปลี่ยน `noindex` หรือ `example.com`
+
+ค้างต่อ (นอกขอบเขต): copy ของ /services/ ขัดกับข้อความ "No reservations or services are offered" และ src/content/home.ts ยังมี starter copy เดิม → BRAND-001 / SEO-008
+
 ## งานต่อ (SEO-008 — Release and indexing readiness, 2026-10-30)
 สถานะ: **BLOCKED — รอข้อมูลสำหรับเผยแพร่จากเจ้าของเว็บไซต์**. ห้ามถอด `noindex` หรือ publish จนกว่ารายการบังคับด้านล่างจะได้รับการอนุมัติ
 
@@ -114,6 +130,63 @@ A → B → C → D → E → F → G → H/I/J → handoff
 - [ ] deploy แล้วตรวจ response headers, robots, sitemap และ canonical บน production origin ก่อนแจ้ง Google Search Console
 
 เกณฑ์ผ่าน: ไม่มี `example.com`, `hello@example.com`, `noindex` หรือ URL ข้าม origin ใน artifacts ที่ build; ทุก canonical/OG/sitemap/robots ใช้ HTTPS production origin ที่อนุมัติ; verification ผ่าน และ Lighthouse SEO 100 โดยไม่มี SEO audit อื่นล้มเหลว
+
+## งานต่อ (DEPLOY-001 — Docker build/preview และ Windows batch deploy, 2026-10-30)
+
+สถานะ: **IMPLEMENTED — Kiro (2026-10-30), ทดสอบในเครื่องผ่านทั้งหมด; deploy ขึ้น Cloudflare จริง NOT RUN (ยังไม่มี credentials/project)**. แผนเดิมบันทึกโดย Codex; ผลจริงอยู่ใน docs/agent-logs/2026-10-30-DEPLOY-001-KIRO.md
+
+### เป้าหมายและขอบเขต
+
+ใช้ Docker สำหรับ build + preview ตามที่ผู้ใช้เลือก และใช้ Windows `.bat` สั่ง build/deploy โดยตั้งค่าผ่าน `.env`. Cloudflare Pages รับ static artifacts จาก `out/` ผ่าน Wrangler Direct Upload; ไม่รัน Docker image บน Pages และคงสถาปัตยกรรม ADR-0001 ไม่มี registry push หรือ CI/CD อัตโนมัติใน Task นี้
+
+### Checklist implementation
+
+- [x] สร้าง multi-stage Dockerfile: `npm ci`, lint/typecheck, static build และ `verify:html`; แยก stage export artifact กับ preview image (Dockerfile: deps/build/artifact/preview/wrangler)
+- [x] Preview image ใช้ static server แบบ non-root รองรับ `/services/`, HTTP 404 และ security headers โดยไม่มี Next.js runtime server (uid 1000 node, read-only rootfs, cap-drop ALL; serve-static อ่าน `_headers`)
+- [x] ล็อกเวอร์ชัน Node, base images และ Wrangler ที่ตรวจร่วมกับ lockfile แล้ว ไม่ใช้ `latest` (node:24.15.0-bookworm-slim@sha256:4e6b70dd…, wrangler 4.155.0, `npm ci`)
+- [x] เพิ่ม `.dockerignore` ตัด `.env`, credentials, `.git`, dependencies และ build outputs ในเครื่องออกจาก build context (context 5.8 MB)
+- [x] สร้าง `build.bat` สำหรับ build image และ export artifact ใหม่ทุกครั้ง (`.artifacts/out`)
+- [x] สร้าง `preview.bat` เปิด preview image ที่ `http://127.0.0.1:4173` โดยเปลี่ยน port ผ่าน config ได้ (`PREVIEW_PORT`)
+- [x] สร้าง `deploy-cloudflare.bat`: ตรวจ config → build → verify → upload artifact รอบเดียวกัน → แสดง deployment URL; หยุดด้วย nonzero exit code เมื่อขั้นตอนใดล้มเหลว
+- [x] ใช้ Node helper ร่วมกันอ่าน config/เรียกคำสั่ง รองรับ path ที่มีช่องว่าง ไม่ประมวลผลค่า `.env` เป็น shell code; ระบุ Node และ Docker Desktop Linux containers เป็น prerequisites (scripts/deploy/cli.mjs, DOCKER_AND_BATCH.md)
+- [x] Deploy ผ่าน Wrangler ที่ล็อกเวอร์ชันใน container ส่ง token เฉพาะขั้น upload ไม่ส่งเข้า Docker build หรือเก็บใน image (`docker run --env NAME`; image history/env ไม่มี CLOUDFLARE)
+- [x] จัดทำคู่มือสร้าง Pages project แบบ Direct Upload และ token สิทธิ์ Pages Edit เฉพาะ account ที่ใช้; script ใช้ project ที่มีอยู่ ไม่สร้างอัตโนมัติ (docs/deployment/DOCKER_AND_BATCH.md)
+
+### Config ผ่าน .env
+
+- [x] เพิ่ม `.env.example` พร้อมคำอธิบาย คง `.env` จริงนอก Git และใช้ค่าดังนี้
+
+| ตัวแปร | การใช้งาน / ค่าเริ่มต้น |
+| --- | --- |
+| `DOCKER_IMAGE_NAME` | `villa-luma` |
+| `DOCKER_IMAGE_TAG` | `local` |
+| `PREVIEW_PORT` | `4173` |
+| `CLOUDFLARE_ACCOUNT_ID` | ต้องกรอกก่อน deploy |
+| `CLOUDFLARE_API_TOKEN` | Secret สำหรับ upload เท่านั้น |
+| `CLOUDFLARE_PAGES_PROJECT_NAME` | ชื่อ project ที่มีอยู่ |
+| `CLOUDFLARE_PRODUCTION_BRANCH` | ต้องระบุให้ตรงกับ project |
+| `CLOUDFLARE_DEPLOY_BRANCH` | `preview` |
+| `DEPLOY_TARGET` | `preview`; รองรับ `production` |
+
+- [x] Process environment มีลำดับความสำคัญเหนือ `.env`; อ่านไฟล์ config จาก root โปรเจกต์
+- [x] ตรวจค่าตามคำสั่ง: build/preview ไม่ต้องมี Cloudflare credentials
+- [x] Preview branch ต้องไม่ตรงกับ production branch; production ต้องใช้ branch ที่ตั้งไว้ตรงกัน (production ต้องมี `--confirm-production` ด้วย)
+- [x] ไม่พิมพ์ token ลง log และไม่ใช้ `NEXT_PUBLIC_*` สำหรับ credentials (`check` แสดงเป็น `(set)`, output ของ Wrangler ถูก redact)
+- [x] Config deployment มีผลตอนเรียกคำสั่ง; การเปลี่ยนโดเมนใน static HTML ต้อง rebuild และดำเนินการตาม SEO-008
+
+### เกณฑ์ตรวจรับและส่งมอบ
+
+- [x] Build จาก checkout ใหม่ด้วย Docker ได้ พร้อม HTML/สื่อ/`_headers` ครบ (สำเนา HEAD ที่ path มีช่องว่าง ไม่มี node_modules: exit 0, 77 ไฟล์)
+- [x] Preview ผ่าน `/`, `/services/`, URL ที่ไม่มีอยู่, menu และ keyboard navigation (HTTP 16/16; Playwright Chromium กับ container 17/17)
+- [x] ตรวจ Docker ไม่พร้อม, port ชน, config ขาด, token ผิด, path มีช่องว่าง และ build ล้มเหลว; ห้าม upload artifact เก่าต่อ (ทุกกรณี exit 1; build พังแล้วไม่เหลือ artifact และไม่ถึงขั้น upload)
+- [x] ตรวจว่าไม่มี `.env` หรือ token ใน build context, image layers และ artifacts
+- [ ] ทดสอบ deployment บน preview ที่ได้รับอนุญาต ตรวจ HTTP status, headers และไฟล์สำคัญจาก URL จริง — **NOT RUN**: ยังไม่มี Account ID, token และ Direct Upload project (ทดสอบด้วย token ปลอมแล้ว Cloudflare ปฏิเสธก่อนส่งไฟล์)
+- [x] อัปเดต README, task log และ PROJECT_STATE พร้อมผลจริงและวิธีย้อนกลับ (Pages dashboard: Rollback to this deployment; ไม่ใช้ artifact ซ้ำข้ามรอบ)
+
+Production release ขึ้นกับการตรวจเนื้อหาและโดเมนใน SEO-008; tooling ไม่ถอด `noindex` อัตโนมัติ หน้า 404 ยังคง `noindex` แม้เปิด index หน้าปกติแล้ว การวางแผนนี้ยังไม่ใช่การ publish
+
+อ้างอิง: https://developers.cloudflare.com/pages/get-started/direct-upload/
+Log: docs/agent-logs/2026-10-30-DEPLOY-001-Codex.md (แผน), docs/agent-logs/2026-10-30-DEPLOY-001-KIRO.md (implementation และผลทดสอบ)
 
 Log: docs/agent-logs/2026-10-28-REV-001-Codex.md, docs/agent-logs/2026-10-29-REV-001-KIRO.md, docs/agent-logs/2026-10-29-REV-002-KIRO.md
 State: docs/PROJECT_STATE.md

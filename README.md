@@ -9,7 +9,7 @@ An English **master prompt, documented folder architecture, multi-agent handoff 
 3. Paste the master prompt to the agent and ask it to **initialize, complete and test the project in this directory**.
 4. Replace the example brand, content, domain and design tokens in `src/config/site.ts`, `src/content/home.ts`, and `docs/design/`.
 5. Have the agent verify compatible package versions, run `npm install` to create a `package-lock.json`, `npm run build`, and the relevant checks.
-6. Push to GitHub and connect that repo to Cloudflare Pages, setting `npm run build` and output directory `out`.
+6. Push to GitHub and connect that repo to Cloudflare Pages, setting `npm run build` and output directory `out`. Alternatively, on Windows with Docker Desktop, use `build.bat`, `preview.bat` and `deploy-cloudflare.bat` (Direct Upload). See `docs/deployment/DOCKER_AND_BATCH.md`.
 
 ## Example local setup (after version verification)
 

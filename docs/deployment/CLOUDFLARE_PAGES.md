@@ -1,5 +1,9 @@
 # Deploy to Cloudflare Pages (Static Next.js)
 
+Two supported paths:
+- **Git integration** (steps below): Cloudflare builds from the repository.
+- **Direct Upload from Windows with Docker** (DEPLOY-001): `build.bat`, `preview.bat`, `deploy-cloudflare.bat`. See [DOCKER_AND_BATCH.md](DOCKER_AND_BATCH.md). Choose one per project: Cloudflare does not let a project switch between Direct Upload and Git integration in either direction; you would create a new project ([Direct Upload docs](https://developers.cloudflare.com/pages/platform/direct-upload/)).
+
 1. Verify `next.config.ts` uses `output: 'export'`.
 2. Run `npm install` and commit `package-lock.json`; use `npm ci` in CI afterward.
 3. Run `npm run typecheck`, `npm run lint`, `npm run build`, `npm run verify:html`.
